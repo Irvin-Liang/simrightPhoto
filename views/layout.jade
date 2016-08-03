@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href="/stylesheets/kendo.common.min.css")
+    link(rel='stylesheet', href="/stylesheets/kendo.default.min.css")
+    link(rel='stylesheet', href="/stylesheets/kendo.default.mobile.min.css")
+    link(rel='stylesheet', href='/stylesheets/gallery.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+    script(src="/javascripts/jquery.min.js")
+    script(src="/javascripts/kendo.all.min.js")
+  body
+    header
+      a(class="logo" href="")
+        h1="simright"
+          span="Photo"
+      script.
+        var selectedPhoto= "hello world";
+
+    include toolBar.html
+    block content

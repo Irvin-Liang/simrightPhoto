@@ -1,0 +1,43 @@
+<div id="image-inner-wrap">
+    <div id="image">
+        <img id="imageView">
+    </div>
+
+    <div id="details">
+        <h2 id="imagename"></h2>
+        <h2>Description:</h2>
+
+        <form method="post" id="desc-form">
+            <textarea id="description" name="description"></textarea>
+        </form>
+        <p id="accesstimes"></p>
+    </div>
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        // Get image meta data from server
+        $.get('/photo/' + selectedPhoto, 'json', function (data) {
+            $("#imageView").attr('src', data.myImage.path);
+            $("#imagename").html(data.myImage.originalname);
+            $("#description").html(data.myImage.description);
+            $("#accesstimes").html("Access Times:" + data.myImage.accessTimes);
+        });
+
+        // Update the image description on change
+        $("#description").change(function () {
+            var text = { description : $("#description").val()};
+
+            $("#desc-form").submit(function (e) {
+                e.preventDefault();
+                $.post('/photo/' + selectedPhoto, text, function(resp){
+                    console.log(resp);
+                });
+            });
+
+            $("#desc-form").submit();
+        });
+    });
+</script>

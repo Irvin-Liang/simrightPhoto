@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    height: 100%;
+}
+h1 {
+    margin-top: 0;
+}
+
+header{
+    background-image: url("./images/texture.png");
+    padding: 20px;
+    height: 36px;
+}
+
+.logo{
+    font-weight: normal;
+    color: #ffd200;
+    margin: 0;
+    display: inline-block;
+    text-decoration: none;
+}
+.logo span{
+    font-weight: bold;
+}
+
+#main{
+    position: absolute;
+    width: 100%;
+    min-height:100vh;
+}
+
+#main, #listView, #toolbar{
+    background-image: url("./images/texture-darker.png");
+    border: 0;
+}
+
+#details h2{
+    margin: 0;
+    padding: 20px;
+    color: #ffd200;
+}
+
+#imageView{
+    max-width: 100%;
+    height:auto;
+}
+
+#image{
+    float: left;
+    width: auto;
+    max-width: 60%;
+    margin: 20px;
+}
+#details{
+    float: left;
+    width:auto;
+}
+
+#description{
+    width: 400px;
+    margin: 20px;
+    border: none;
+    resize: none;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+    font-family: "Times New Roman", "Georgia", "serif";
+}
+
+#accesstimes{
+    margin: 20px;
+    color: #949494;
+}

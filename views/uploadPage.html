@@ -1,0 +1,27 @@
+
+
+<div id="uploadbar">
+    <div class="k-content">
+        <input name="files[]" id="files" type="file" accept="image/*"/>
+    </div>
+
+    <script>
+
+
+        $(document).ready(function() {
+
+            // Upload from Kendo UI
+            $("#files").kendoUpload({
+                async: {
+                    saveUrl: "/upload",
+                    autoUpload: true
+                }
+            });
+
+
+        });
+    </script>
+</div>
+
+
+

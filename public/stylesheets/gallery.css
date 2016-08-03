@@ -1,0 +1,40 @@
+#listView {
+    padding: 10px 5px;
+    margin-bottom: -1px;
+    min-height: 510px;
+}
+.photo {
+    float: left;
+    position: relative;
+    width: 220px;
+    height: 124px;
+    margin: 1px;
+    padding: 0;
+}
+.photo img {
+    width: 220px;
+    height: 124px;
+}
+.photo h3 {
+    margin: 0;
+    padding: 3px 5px 0 0;
+    max-width: 96px;
+    overflow: hidden;
+    line-height: 1.1em;
+    font-size: .9em;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.photo:hover{
+    opacity: 0.5;
+}
+.k-listview:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+

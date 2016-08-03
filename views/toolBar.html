@@ -1,0 +1,40 @@
+<div>
+    <div class="k-content wide">
+        <div id="toolbar"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            // Toolbar from Kendo UI
+            $("#toolbar").kendoToolBar({
+                items: [
+                    {
+                        type: "buttonGroup",
+                        buttons: [
+                            { spriteCssClass: "k-icon k-i-arrow-n", text: "Upload",
+                                togglable: false, group: "nav", click: toUpload},
+                            { spriteCssClass: "k-icon k-i-group", text: "Gallery",
+                                togglable: false, group: "nav", click: toGallery }
+                        ]
+                    }
+                ]
+            });
+
+            // Click event handler, enter the upload page
+            function toUpload(e) {
+                $.get('/upload', 'html', function (data) {
+                    $("#main").html(data);
+                });
+            }
+
+            // Click event handler, enter the gallery page
+            function toGallery(e){
+                $.get('/gallery', 'html', function (data) {
+                    $('#main').html(data);
+                })
+            }
+
+
+        });
+    </script>
+
+</div>

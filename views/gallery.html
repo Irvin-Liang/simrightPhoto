@@ -1,0 +1,51 @@
+<div class="k-content wide">
+    <div id="listView"></div>
+</div>
+
+
+<script type="text/x-kendo-template" id="template">
+    <div class="photo">
+        <a href="photo/#= filename#" id="#= filename#" class="galleryPhotos">
+            <img src="#= path #"/>
+        </a>
+    </div>
+</script>
+
+<script>
+    $(function() {
+
+        // Send a GET request to '/photo', expect json data containing image meta data
+        $.get('/photo', 'json', function (images) {
+            var data = images.data;
+
+            var dataSource = new kendo.data.DataSource({
+                data: data,
+            });
+
+            // List View from Kendo UI
+            $("#listView").kendoListView({
+                dataSource: dataSource,
+                template: kendo.template($("#template").html())
+            });
+
+            // Click image enter the image view page
+            $(".galleryPhotos").click(function (e){
+                e.preventDefault();
+                selectedPhoto = this.id;
+                $.get('/view', 'html', function ( data ) {
+                    $("#main").html(data);
+                })
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+    });
+</script>
